@@ -14,7 +14,7 @@
 
 1. create the .env file in the project root directory and set the values:
    ```shell
-    PROJECT_NAME=Gateway
+    PROJECT_NAME=
 
     DATABASE_PORT=
     POSTGRES_PASSWORD=
@@ -38,9 +38,26 @@
 ## Running the Server
 
 ```shell
-$ uvicorn main:app --reload
+  uvicorn main:app --reload
 ```
 
 ## View api documentation
 
 - Visit `http://127.0.0.1:8000/docs`
+
+# Running with docker-compose
+
+1. Make sure you have docker and docker-compose installed
+2. Set the following env vars in the .env file
+   ```shell
+        POSTGRES_HOST=pgdb
+        PGADMIN_DEFAULT_EMAIL=
+        PGADMIN_DEFAULT_PASSWORD=
+   ```
+3. Run <br/>
+   `docker compose up` <br/> or <br/>
+   `docker compose up -d` for running in the background
+4. Visit <br/>
+   `http://127.0.0.1:8000/docs`
+5. For clean up, run <br/>
+   `docker compose down -v`

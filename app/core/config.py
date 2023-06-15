@@ -16,8 +16,6 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRES_IN: int
     REFRESH_TOKEN_EXPIRES_IN: int
 
-    CLIENT_ORIGIN: str
-
     class Config:
         env_file = './.env'
 
